@@ -1,0 +1,28 @@
+{% extends 'admin/admin_layout.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+
+<h2 class='titre-dashboard'>Bienvenue sur le Dashboard</h2>
+<div class="statistics">
+    <div class="stat">
+        <h3>Total Users</h3>
+        <p>{{ totalUsers }}</p>
+    </div>
+    <div class="stat">
+        <h3>Total Parfums</h3>
+        <p>{{ totalParfums }}</p>
+    </div>
+    <div class="stat">
+        <h3>Total Coffrets</h3>
+        <p>{{ totalCoffrets }}</p>
+    </div>
+    <div class="stat">
+        <h3>Total Paniers</h3>
+        <p>{{ totalPaniers }}</p>
+    </div>
+    
+</div>
+
+{% endblock %}

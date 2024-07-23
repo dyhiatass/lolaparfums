@@ -1,0 +1,82 @@
+
+
+
+
+{% extends 'admin/admin_layout.html.twig' %}
+
+{% block body %}
+    
+
+    {% if errors %}
+        {% for message in errors %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="container__form">
+    <h1 class='titre_login_register'>Ajouter un nouveau produit</h1>
+        {{ form_start(form) }}
+<span class='informations_connexion'>Informations du produit</span>
+        <div class="form-group">
+            {{ form_label(form.nom) }}
+            {{ form_widget(form.nom) }}
+            
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.marque) }}
+            {{ form_widget(form.marque) }}
+           
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.description, 'Description', { 'label_attr': {'class': 'description-label'} }) }}
+            {{ form_widget(form.description, { 'attr': {'class': 'description-input'} }) }}
+            
+        </div>
+
+        <div class="form-group">
+    
+            {{ form_widget(form.image) }}
+           
+        </div>
+        <div class="form-group">
+            {{ form_label(form.genre) }}
+            {{ form_widget(form.genre) }}
+           
+        </div>
+        <div class="form-group">
+            {{ form_label(form.concentration) }}
+            {{ form_widget(form.concentration) }}
+           
+        </div>
+        <div class=" checkbox">
+         {{ form_widget(form.isCoffret) }}
+            {{ form_label(form.isCoffret) }}
+           
+           
+        </div>
+        <div class=" checkbox">
+         {{ form_widget(form.tendance) }}
+            {{ form_label(form.tendance) }}
+           
+           
+        </div>
+        <div class=" checkbox">
+          {{ form_widget(form.coupDeCoeur) }}
+            {{ form_label(form.coupDeCoeur) }}
+          
+           
+        </div>
+        <div class=" checkbox">
+         {{ form_widget(form.meilleursVente) }}
+            {{ form_label(form.meilleursVente) }}
+           
+           
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+header {
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+header .logo_header_icon {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+header .logo_header_icon .logo_header {
+  height: 12vh;
+  max-width: 24vw;
+  margin: 10px;
+}
+header .logo_header_icon .logo_header img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center;
+     object-position: center;
+}
+header .logo_header_icon .img-icon {
+  top: 16%;
+  right: 3%;
+  position: absolute;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+header .logo_header_icon .img-icon .user_connexion {
+  display: flex;
+  gap: 0.8rem;
+}
+header .logo_header_icon .img-icon .user_connexion a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  cursor: pointer;
+}
+header .logo_header_icon .img-icon .user_connexion a .totalItemsPanier {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  top: -15px;
+  right: -4px;
+  color: white;
+  background-color: rgb(225, 0, 84);
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+}
+header .logo_header_icon .img-icon .user_connexion a .text_connexion {
+  margin-left: 0.2rem;
+  font-size: 1rem;
+  display: block;
+}
+@media (max-width: 700px) {
+  header .logo_header_icon .img-icon .user_connexion a .text_connexion {
+    display: none;
+  }
+}
+header .logo_header_icon p:hover a {
+  color: black;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+nav ul li {
+  margin: 10px 16px;
+}
+nav ul li a {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  line-height: 1.3;
+  font-family: "Reem Kufi", sans-serif;
+  text-decoration: none;
+  color: #333333;
+  font-weight: normal;
+}
+nav ul li a .titre-promo {
+  color: rgb(225, 0, 84);
+}
+
+#menu {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+@media (max-width: 1080px) {
+  .menu-icon {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+  #menu:checked + .menu-icon + nav {
+    display: flex;
+  }
+}/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,126 @@
+.product-detail {
+  padding: 20px;
+  color: #333;
+}
+.product-detail .product-name {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.product-detail .product-image {
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.product-detail .product-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.product-detail .choix-taille,
+.product-detail .product-is-coffret {
+  font-weight: bold;
+  color: rgb(225, 0, 84);
+  margin-bottom: 10px;
+}
+.product-detail .product-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 30%;
+}
+.product-detail .product-options {
+  margin-bottom: 10px;
+}
+.product-detail .product-options .product-option {
+  margin-bottom: 10px;
+}
+.product-detail .product-options .product-option label {
+  font-size: 1rem;
+  margin-left: 8px;
+}
+.product-detail .product-options .product-option label .product-price-initial {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 10px;
+}
+.product-detail .product-options .product-option label .product-price-promotion {
+  color: rgb(225, 0, 84);
+  font-weight: bold;
+}
+.product-detail .product-options .product-option label .prix-non-promotion {
+  text-decoration: none;
+}
+.product-detail .product-options .product-option input[type=radio],
+.product-detail .product-options .product-option input[type=hidden] {
+  margin-right: 10px;
+}
+.product-detail .product-button {
+  background-color: #F9A49D;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.product-detail .product-button:hover {
+  background-color: #F9A49D;
+}
+.product-detail .product-back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: rgb(225, 0, 84);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Media Queries for Responsive Design */
+/* Tablets and larger screens */
+@media (max-width: 1200px) {
+  .product-detail .product-form {
+    width: 30%;
+  }
+}
+/* Small desktops and larger tablets */
+@media (max-width: 992px) {
+  .product-detail .product-form {
+    width: 40%;
+  }
+}
+/* Tablets and larger phones */
+@media (max-width: 768px) {
+  .product-detail {
+    padding: 15px;
+  }
+  .product-detail .product-name {
+    font-size: 1.5rem;
+  }
+  .product-detail .product-form {
+    width: 60%;
+  }
+}
+/* Phones */
+@media (max-width: 576px) {
+  .product-detail {
+    padding: 10px;
+  }
+  .product-detail .product-name {
+    font-size: 1.2rem;
+  }
+  .product-detail .product-form {
+    width: 80%;
+    padding: 15px;
+  }
+  .product-detail .product-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+  .product-detail .product-back-link {
+    font-size: 0.9rem;
+  }
+}/*# sourceMappingURL=detailParfum.css.map */

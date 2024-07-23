@@ -1,0 +1,162 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}parfum homme
+{% endblock %}
+{% block body %}
+	<section class="section ">
+		<h2 class='section_titre'>Les tendances bestsellers
+		</h2>
+		<div class="section_products">
+			{% for topBestseller in topBestsellers %}
+				
+					<div class="section_product-card">
+                    <div class='container-image'>
+								{% set promotion_url = null %}
+							{% for detail in topBestseller.detailsParfums %}
+								{% if detail.promotion and promotion_url is null %}
+									{% set promotion_url = path('produits_promotions', { id: detail.id }) %}
+								{% endif %}
+							{% endfor %}
+
+							{% if promotion_url %}
+								<a href="{{ promotion_url }}">
+									<img src="{{ asset('uploads/images/' ~ topBestseller.image) }}" alt="{{ topBestseller.nom }}" width="140" height="140">
+								</a>
+							{% else %}
+								<a href="{{ path('produit_detail', { id: topBestseller.id }) }}">
+									<img src="{{ asset('uploads/images/' ~ topBestseller.image) }}" alt="{{ topBestseller.nom }}" width="140" height="140">
+								</a>
+							{% endif %}
+							</div>
+						{% set has_promotion = false %}
+                {% set pourcentage_promotion = 0 %}
+                {% for detail in topBestseller.detailsParfums %}
+                    {% if detail.promotion %}
+                        {% set has_promotion = true %}
+                        {% set pourcentage_promotion = detail.pourcentagePromotion %}
+                    {% endif %}
+                {% endfor %}
+				{% if has_promotion %}
+                    <div class="badge-promotion">
+                        {{ pourcentage_promotion }}% 
+                    </div>
+                {% endif %}
+						<span class='coffrets-marque'>{{ topBestseller.marque }}
+						</span>
+						<span class='coffrets-nom'>{{ topBestseller.nom }}</span>
+						{% set prix = topBestseller.getPrix() %}
+						{% if not topBestseller.isCoffret %}
+						<div class='coffrets-prix'>
+								<p class='prix_texte'>à partir de</p>
+								<span class='prix'>{{ min(prix) }}
+									€</span>
+							</div>
+						{% else %}
+							<div class='coffrets-prix'>
+								<span class='prix'>{{ min(prix) }}
+									€</span>
+							</div>
+						{% endif %}
+					</div>
+				
+			{% endfor %}
+		</div>
+	</section>
+
+	<div class="content">
+		<div class="filters">
+			<h2>Filtrer</h2>
+			{{ form_start(form) }}
+			<div class="form-group">
+				{{ form_label(form.marque) }}
+				{{ form_widget(form.marque) }}
+			</div>
+			<div class="form-group">
+				{{ form_label(form.prix) }}
+				{{ form_widget(form.prix) }}
+			</div>
+			<button type="submit">Appliquer</button>
+			{{ form_end(form) }}
+		</div>
+
+
+		<section class="section_filter ">
+			<h2 class='section_titre'>Découvrez nos bestsellers</h2>
+			<div class="products">
+				{% for bestseller in bestsellers %}
+                
+					<div class="product-card">
+					<div class='container-image'>
+								{% set promotion_url = null %}
+							{% for detail in bestseller.detailsParfums %}
+								{% if detail.promotion and promotion_url is null %}
+									{% set promotion_url = path('produits_promotions', { id: detail.id }) %}
+								{% endif %}
+							{% endfor %}
+
+							{% if promotion_url %}
+								<a href="{{ promotion_url }}">
+									<img src="{{ asset('uploads/images/' ~ bestseller.image) }}" alt="{{ bestseller.nom }}" width="140" height="140">
+								</a>
+							{% else %}
+								<a href="{{ path('produit_detail', { id: bestseller.id }) }}">
+									<img src="{{ asset('uploads/images/' ~ bestseller.image) }}" alt="{{ bestseller.nom }}" width="140" height="140">
+								</a>
+							{% endif %}
+							</div>
+						{% set has_promotion = false %}
+                {% set pourcentage_promotion = 0 %}
+                {% for detail in bestseller.detailsParfums %}
+                    {% if detail.promotion %}
+                        {% set has_promotion = true %}
+                        {% set pourcentage_promotion = detail.pourcentagePromotion %}
+                    {% endif %}
+                {% endfor %}
+				{% if has_promotion %}
+                    <div class="badge-promotion">
+                        {{ pourcentage_promotion }}% 
+                    </div>
+                {% endif %}
+						<span class='coffrets-marque'>{{ bestseller.marque }}
+						</span>
+						<span class='coffrets-nom'>{{ bestseller.nom }}</span>
+						{% set prix = bestseller.getPrix() %}
+						{% if not bestseller.isCoffret %}
+							<div class='coffrets-prix'>
+								<p class='prix_texte'>à partir de</p>
+								<span class='prix'>{{ min(prix) }}
+									€</span>
+							</div>
+						{% else %}
+							<div class='coffrets-prix'>
+								<span class='prix'>{{ min(prix) }}
+									€</span>
+							</div>
+						{% endif %}
+					</div>
+
+
+				{% endfor %}
+                
+			</div>
+
+
+		</section>
+
+
+	</div>
+	<script>
+		let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const totalSlides = slides.length;
+
+function changeSlide(direction) {
+slides[currentSlide].classList.remove('active');
+currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+slides[currentSlide].classList.add('active');
+}
+
+setInterval(() => changeSlide(1), 5000); // Change de diapositive toutes les 5 secondes
+	</script>
+
+{% endblock %}

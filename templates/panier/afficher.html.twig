@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+
+    {% if produits is empty %}
+     <div class='panier_achat'>
+            <a href="{{ path('coffret') }}">Continuer vos achats</a>
+        </div>
+        <div class='panier_vide'>
+            <h3>Votre panier est vide...</h3>
+        </div>
+
+       
+
+    {% else %}
+        <h2 class='section_titre'>Votre panier</h2>
+        <div class='container_table'>
+            <form action="{{ path('panier_delete') }}" method="POST" class="delete-form">
+                <div class="btn-group">
+                    <button type="submit" name="delete" class="delete-button">
+                        <img src="{{ asset('icons/delete.svg') }}" alt="Delete" width="16" height="16">
+                    </button>
+                </div>
+                <div class='table'>
+                    <div class='my-row header-row'>
+                        <div class="cell checkbox-cell"><input type="checkbox"></div>
+                        <div class='cell'>Produit</div>
+                        <div class='cell'>Taille</div>
+                        <div class='cell'>Quantité</div>
+                        <div class='cell'>Prix</div>
+                        <div class='cell'>Image</div>
+                        <div class='cell'>Modifier</div>
+                    </div>
+                    {% set total = 0 %}
+                    {% for item in produits %}
+                        <div class='my-row'>
+                            <div class="cell checkbox-cell">
+                                <input type="checkbox" name="item_ids[]" value="{{ item.id }}">
+                            </div>
+                            <div class='cell'>{{ item.detailsParfum.getNom() }}</div>
+                            <div class='cell'>{{ item.detailsParfum.taille }}</div>
+                            <div class='cell'>
+                                {{ item.quantite }}
+                            </div>
+                            {% if item.detailsParfum.promotion %}
+                                {% set quantite = item.quantite %}
+                                {% set prix_initial = item.detailsParfum.prix %}
+                                {% set pourcentage = item.detailsParfum.pourcentagePromotion %}
+                                {% set prix_apres_promotion = prix_initial * (1 - pourcentage / 100) %}
+                                {% set prix_total = prix_apres_promotion * quantite %}
+                                {% set total = total + prix_total %}
+                                <div class='cell'>{{ prix_total }} €</div>
+                            {% else %}
+                                {% set quantite = item.quantite %}
+                                {% set prix_initial = item.detailsParfum.prix %}
+                                {% set prix_total = prix_initial * quantite %}
+                                {% set total = total + prix_total %}
+                                <div class='cell'>{{ prix_total }} €</div>
+                            {% endif %}
+                            <div class='cell'><img src="{{ asset('uploads/images/' ~ item.detailsParfum.parfums.image ) }}" width="70" height="70"></div>
+                            <div class='cell'>
+                                <a href="{{ path('panier_ajouter', { id: item.id }) }}"><img src="{{ asset('icons/ajout.svg') }}" alt="ajouter" width='25px' height='25px'/></a>
+                                <a href="{{ path('panier_supprimer', { id: item.id }) }}"><img src="{{ asset('icons/suppression.svg') }}" alt="supprimer" width='25px' height='25px'/></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class='total'>
+                    <strong>Total Panier:</strong>
+                    {{ total }} €
+                </div>
+            </form>
+            <div class='panier_achat'>
+                <a href="{{ path('home') }}">Continuer vos achats</a>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

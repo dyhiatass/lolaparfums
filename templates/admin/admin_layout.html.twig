@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Page Admin{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% block stylesheets %}
+        <link href="{{ asset('styles/admin/styleDashboard.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('styles/admin/styleUser.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('styles/admin/styleFormulaire.css') }}" type="text/css" rel="stylesheet"/>
+        
+    {% endblock %}
+</head>
+<body>
+
+            
+        
+    <div class="container">
+        <header class="sidebar">
+            <div class="admin-logo">
+                <img src="{{ asset('icons/admin.svg') }}" alt="Admin Icon" width="35" height="35">
+                <span>Admin</span>
+            </div>
+            <ul>
+               <ul>
+    <li><a href="{{ path('home') }}" aria-label="Accueil"><img src="{{ asset('icons/home.svg') }}" alt="Accueil" class="responsive-icon">Accueil</a></li>
+    <li><a href="{{ path('admin_dashboard') }}" aria-label="Tableau de bord"><img src="{{ asset('icons/dashboard.svg') }}" alt="Tableau de bord" class="responsive-icon">Dashboard</a></li>
+    <li><a href="{{ path('admin_user') }}" aria-label="Gestion des utilisateurs"><img src="{{ asset('icons/dashboard.svg') }}" alt="Gestion des utilisateurs" class="responsive-icon">Utilisateur</a></li>
+    <li><a href="{{ path('admin_product') }}" aria-label="Gestion des produits"><img src="{{ asset('icons/dashboard.svg') }}" alt="Gestion des produits" class="responsive-icon">Produits</a></li>
+    <li><a href="{{ path('admin_details') }}" aria-label="Détails des parfums"><img src="{{ asset('icons/dashboard.svg') }}" alt="Détails des parfums" class="responsive-icon">Détails Parfums</a></li>
+</ul>
+
+               
+                
+            </ul>
+        </header>
+		
+        
+    <main class="main-content">
+		
+    <div class='img-icon'>
+      <span class='prenom_admin'> {{ app.user.prenom }}</span>
+        <img src="{{ asset('icons/userAdmin.svg') }}" alt="icon user" width='28' height='25'>
+        <a href="{{ path('security_logout') }}">se deconnecter</a>
+    </div>
+                    
+            {% block body %}{% endblock %}
+        </main>
+    </div>
+    {% block javascripts %}{% endblock %}
+</body>
+</html>

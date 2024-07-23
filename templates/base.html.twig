@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- Encodage des caractères -->
+		<meta
+		charset="UTF-8">
+		<!-- Configuration de la vue pour une meilleure compatibilité mobile -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Description du site pour le SEO -->
+		<meta name="description" content="Boutique de parfums haut de gamme. Découvrez nos collections pour femmes, hommes et coffrets cadeaux.">
+		<!-- Mots-clés pour le SEO -->
+		<meta name="keywords" content="parfums, haute gamme, boutique en ligne, parfums pour femmes, parfums pour hommes, coffrets cadeaux">
+		<!-- Auteur du site -->
+		<meta name="author" content="Dyhia">
+		<title>{% block title %}Boutique de Parfums Haut de Gamme | Lolaparfums{% endblock %}</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('styles/user/home.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/header.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/parfumFemme.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/login.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/reset.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/registration.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/promotion.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/panier.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/footer.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/coffert.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/detailParfum.css') }}">
+			<link rel="stylesheet" href="{{ asset('styles/user/cgv.css') }}">
+		{% endblock %}
+	</head>
+	<body>
+			<header>
+				<div class='logo_header_icon'>
+					{% if app.user %}
+						<div class="logo_header">
+							<img src="{{ asset('caroussel/logo18.jpeg') }}" alt="logo">
+						</div>
+						<div class='img-icon'>
+							{{ app.user.prenom }}
+							<div class='user_connexion'>
+								<a href="{{ path('security_logout') }}">
+									<img src="{{ asset('icons/userCheck.svg') }}" alt="icon user" width='23' height='22'><span class='text_connexion'>se deconnecter</span>
+								</a>
+								<a href='{{path('panier_afficher')}}'>
+									<img src="{{ asset('icons/basket-icon-bold.svg') }}" alt="icon cart" width='20' height='20'>
+									<span class='totalItemsPanier'>{{totalItemsPanier}}</span>
+								</a>
+							</div>
+						</div>
+					{% else %}
+						<div class="logo_header">
+							<img src="{{ asset('caroussel/logo18.jpeg') }}" alt="logo">
+						</div>
+						<div class='img-icon'>
+							<div class='user_connexion'>
+								<a href="{{ path('security_login') }}">
+									<img src="{{ asset('icons/user.svg') }}" alt="icon user" width='17' height='21'>
+									<span class='text_connexion'>se connecter</span>
+								</a>
+								<a href='{{path('panier_afficher')}}'>
+									<img src="{{ asset('icons/basket-icon-bold.svg') }}" alt="icon cart" width='20' height='20'>
+								</a>
+							</div>
+						</div>
+					{% endif %}
+				</div>
+				<input type="checkbox" id="menu">
+				<label for="menu" class="menu-icon">☰</label>
+				<nav>
+					<ul>
+						<li><a href="{{ path('promotions') }}" aria-label="Promotions en cours"><span class='titre-promo'>🔥Promotions</span></a></li>
+                        <li><a href="{{ path('home') }}" aria-label="Accéder à la boutique">Shop</a></li>
+                        <li><a href="{{ path('parfum_femme') }}" aria-label="Parfums pour femmes">Parfum Femme</a></li>
+                        <li><a href="{{ path('parfum_homme') }}" aria-label="Parfums pour hommes">Parfum Homme</a></li>
+                        <li><a href="{{ path('coffret') }}" aria-label="Voir les coffrets cadeaux">Coffret</a></li>
+                        <li><a href="{{ path('bestsellers') }}" aria-label="Voir les meilleures ventes">Bestsellers</a></li>
+						{% if is_granted('ROLE_ADMIN') %}
+							<li>
+								<li><a href="{{ path('admin_dashboard') }}" aria-label="Accéder au tableau de bord administrateur">Dashboard</a></li>
+							</li>
+						{% endif %}
+					</ul>
+				</nav>
+			</header>
+			<main>
+				{% block body %}{% endblock %}
+			</main>
+			<footer>
+				<div class="container_footer">
+					<div class='section_footer'>
+						<h3 class='titre-footer'>informations</h3>
+						<div class='informations'>
+							<a class='texte' href='{{path('cgu')}}'>CGU</a>
+							<span class='separator'>|</span>
+							<a class='texte' href='{{path('cgv')}}'>CGV</a>
+						</div>
+					</div>
+					<div class='section_footer'>
+						<h3 class='titre-footer'>nous contacter</h3>
+						<p class='adresse_mail'>contact@lolaparfums.com</p>
+					</div>
+					<div class='section_footer'>
+						<h3 class='titre-footer'>nous suivre</h3>
+						<div class='icons-footer'>
+							<a href=""><img src="{{asset('icons/facebook.svg')}}" width='24' height='23'></a>
+							<a href=""><img src="{{asset('icons/instagram.svg')}}" width='24' height='23'></a>
+						</div>
+					</div>
+				</div>
+			</footer>
+	</body>
+</html>

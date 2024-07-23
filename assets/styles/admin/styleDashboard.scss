@@ -1,0 +1,166 @@
+
+
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    .container {
+        display: flex;
+        height: 100vh;
+
+        .sidebar {
+            background-color: #f57f74 ; 
+            padding: 0.6rem 0.6rem;
+            box-sizing: border-box;
+            display: flex;
+            flex: 0 1 14vw;
+            flex-direction: column;
+            align-items: center;
+            .admin-logo{
+                width: 100%;
+                background-color: #f57f74;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.5rem;
+                .responsive-icon_header{
+                    width: 3vw; /* 5% of the viewport width */
+                    height: auto; /* Maintain aspect ratio */
+                }
+                span{
+                    
+                    font-size: 1.2rem;
+                    line-height:1.3 ;
+                    font-family: "Reem Kufi" sans-serif;
+                    color: #FFFFFF;
+                }
+
+            }
+
+            ul {
+                border-top: 1px solid white;
+                list-style: none;
+                padding: 1rem;
+                width: 100%;
+
+                li {
+                    //display: flex;
+                    width: 100%; 
+                    margin: 20px 0;
+
+                     a {
+                        font-family: 'Reem Kufi', sans-serif;
+                        color: #FFFFFF; 
+                        text-decoration: none;
+                        font-size: 1rem;
+                    line-height:1.3 ;
+                    font-family: "Reem Kufi" sans-serif;
+                    text-decoration: none;
+                    color:white;
+                    font-weight: normal;
+                    
+                    .responsive-icon{
+                      
+                        width: 1.5vw; /* 5% of the viewport width */
+                        height: auto; /* Maintain aspect ratio */
+                        margin-right:0.7rem;
+                    }
+                    @media (max-width: 850px) {
+                        .responsive-icon {
+                            display: none;
+                        }
+                    }
+                    
+                    
+                    }
+                    
+                }
+                li:hover {
+                    background-color:#f69087 ;
+                    border-radius: 5px;
+                }
+                   
+            }
+        }
+        .main-content {
+            
+            position: relative;
+            flex: 1;
+            padding: 10px;
+            background-color: white; 
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 1;
+            .img-icon{
+                gap: 6px;
+                display: flex;
+                position: absolute;
+                top: 3%;
+                right: 3%;
+                span{
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+      a{
+    
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+        font-size: 1.08rem;
+        display: block;
+    }
+   
+}
+
+            }
+        } 
+        
+    }
+    
+    
+
+
+
+.titre-dashboard {
+    font-family: "Reem Kufi", sans-serif;
+        text-align: center;
+        padding-top: 1.25rem;
+        line-height: 1.875;
+        color: #333;
+        font-weight: inherit;
+}
+
+.statistics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    .stat {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        
+        border-radius: 10px;
+        padding: 20px;
+        flex: 1;
+        text-align: center;
+        color: #333333; 
+        max-width: 200px;
+    }
+    h3 {
+        font-family: 'Reem Kufi', sans-serif;
+        margin-bottom: 10px;
+        font-size: 1.09rem;
+    }
+    p {
+        font-family: 'Reem Kufi', sans-serif;
+        font-size: 1.09rem;
+        margin: 0;
+    }
+    
+}
+
+
+
+ 
+
+ 
+

@@ -1,0 +1,60 @@
+
+
+
+{% extends 'admin/admin_layout.html.twig' %}
+
+{% block title %}Liste des détails des parfums
+{% endblock %}
+
+{% block body %}
+
+	<div class="container_table">
+		<form action="{{ path('admin_product_delete') }}" method="POST">
+		<div class="btn-group">
+		<button type="submit" name="delete" class="delete-button"><img src="{{asset('icons/delete.svg')}}" width="16" height="16" ></button>
+		<a class='add-button' href="{{ path('admin_product_new') }}"><img src="{{asset('icons/add.svg')}}" width='18vw' height='18vh' ></a>
+		</div>
+			<div class='table'>
+				<div class='my-row header-row'>
+					<div class='cell checkbox-cell'><input type='checkbox'></div>
+					<div class='cell'>Nom</div>
+					<div class='cell'>Marque</div>
+					<div class='cell'>Genre</div>
+					<div class='cell'>Concentration</div>
+					<div class='cell'>Coffret</div>
+					<div class='cell'>MeilleurVente</div>
+					<div class='cell'>Tendence</div>
+					<div class='cell'>CoupDecoeur</div>
+					<div class='cell'>Image</div>
+					<div class='cell'>Edit</div>
+
+				</div>
+					{% for product in products %}
+					<div class='my-row'>
+						<div class='cell checkbox-cell'><input type='checkbox' name='product_ids[]' value={{product.id |number_format }}></div>
+						<div class='cell'>{{product.nom}}</div>
+						<div class='cell'>{{product.marque}}</div>
+						<div class='cell'>{{product.genre}}</div>
+						<div class='cell'>{{product.concentration}}</div>
+						<div class='cell'>{{product.isCoffret ?'oui':'non' }}</div>
+						<div class='cell'>{{ product.meilleursVente ? 'Oui' : 'Non' }}</div>
+						<div class='cell'>{{ product.tendance ? 'Oui' : 'Non' }}</div>
+						<div class='cell'>{{ product.coupDeCoeur ? 'Oui' : 'Non' }}</div>
+						<div class='cell'>{{product.image}}</div>
+						<div class='cell'>
+							<a href="{{ path('admin_product_edit', {id: product.id})}}"><img src="{{asset('icons/editProduct.svg')}}" width='18vw' height='18vh' ></a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+			
+		</fom>
+	</div>
+
+	
+{% endblock %}
+
+
+
+

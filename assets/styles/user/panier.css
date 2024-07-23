@@ -1,0 +1,161 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+body .section_titre {
+  padding: 1rem;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+  line-height: 1.875;
+  letter-spacing: 0.125rem;
+  font-weight: bold;
+}
+body .panier_vide {
+  margin-top: 18vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+body .panier_vide h3 {
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.3rem;
+  color: rgb(225, 0, 84);
+}
+body .panier_achat {
+  margin-left: 10PX;
+  margin-top: 1rem;
+  width: 200px;
+  height: 6vh;
+  background-color: #F9A49D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+body .panier_achat a {
+  color: white;
+  text-decoration: none;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.1rem;
+}
+@media (max-width: 1200px) {
+  body .panier_achat {
+    width: 200px;
+    height: 6vh;
+  }
+  body .panier_achat a {
+    font-size: 1rem;
+  }
+}
+body .container_table {
+  min-height: 70vh;
+  flex: 1;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  overflow-x: auto;
+}
+body .container_table .btn-group {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+body .container_table .btn-group .delete-form {
+  margin-right: 10px;
+}
+body .container_table .btn-group .delete-button,
+body .container_table .btn-group .add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+body .container_table .btn-group .delete-button img,
+body .container_table .btn-group .add-button img {
+  display: block;
+}
+body .container_table .table {
+  border: 1px solid #ddd;
+  width: 60%;
+  border-collapse: collapse;
+  min-width: 400px;
+}
+body .container_table .table .my-row,
+body .container_table .table .header-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+body .container_table .table .my-row .cell,
+body .container_table .table .header-row .cell {
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 0.9025rem;
+  padding: 5px;
+  text-align: left;
+  flex: 1;
+  color: #333333;
+}
+body .container_table .table .my-row .checkbox-cell,
+body .container_table .table .header-row .checkbox-cell {
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  width: 10%;
+}
+body .container_table .table .my-row .checkbox-cell input[type=checkbox],
+body .container_table .table .header-row .checkbox-cell input[type=checkbox] {
+  margin: 0;
+}
+body .container_table .table .my-row:last-child {
+  border-bottom: none;
+}
+body .container_table .table .header-row .cell {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333333;
+}
+body .container_table .total {
+  padding: 1rem;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.2rem;
+}
+@media (max-width: 1200px) {
+  body .container_table .panier_achat {
+    width: 30vw;
+  }
+}
+@media (max-width: 992px) {
+  body .container_table .panier_achat a {
+    font-size: 1.1rem;
+  }
+  body .container_table .table {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  body .container_table .panier_achat {
+    width: 50vw;
+  }
+  body .container_table .panier_achat a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  body .container_table .panier_achat {
+    width: 50vw;
+  }
+  body .container_table .panier_achat a {
+    font-size: 0.9rem;
+  }
+  body .container_table .table {
+    min-width: 300px;
+  }
+}
+
+/* Media Queries for Smaller Screens *//*# sourceMappingURL=panier.css.map */

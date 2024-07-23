@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* Styles généraux pour le conteneur */
+.container_table {
+  margin: 40px 5px 0 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Pour permettre le défilement horizontal sur les petits écrans */
+}
+.container_table .btn-group {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.container_table .btn-group .delete-form {
+  margin-right: 10px;
+}
+.container_table .btn-group .delete-button, .container_table .btn-group .add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.container_table .btn-group .delete-button img, .container_table .btn-group .add-button img {
+  display: block;
+}
+.container_table .table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* Largeur minimale pour éviter les déformations */
+}
+.container_table .table .my-row, .container_table .table .header-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+.container_table .table .my-row .cell, .container_table .table .header-row .cell {
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 0.9025rem;
+  padding: 5px;
+  text-align: left;
+  flex: 0 1 20%;
+  color: #333333;
+}
+.container_table .table .my-row .checkbox-cell, .container_table .table .header-row .checkbox-cell {
+  padding: 0;
+  display: flex;
+  justify-content: left;
+  width: 3vw;
+}
+.container_table .table .my-row .checkbox-cell input[type=checkbox], .container_table .table .header-row .checkbox-cell input[type=checkbox] {
+  margin: 0;
+}
+.container_table .table .my-row:last-child {
+  border-bottom: none;
+}
+.container_table .table .header-row .cell {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333333;
+}/*# sourceMappingURL=styleUser.css.map */

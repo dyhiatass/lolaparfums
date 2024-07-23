@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+  <h1 class='titre_login_register'>IDENTIFIEZ-VOUS OU CRÉEZ UN COMPTE</h1> 
+
+<div class="container_login">
+
+<div id="content">
+<h2>Nouveau client ?</h2>
+<div class='parag'><p>En créant un compte sur notre boutique, vous pourrez passer vos commandes plus rapidement, enregistrer plusieurs adresses de livraison, consulter et suivre vos commandes, et plein d'autres choses encore.</p></div>
+
+<div class="btn">
+<a  href="{{ path('inscription') }}">Créer un compte</a>
+</div>
+</div>
+<div id="content">
+{# {% if error %}
+        <div class="alert alert-danger">
+            {{ error }}
+        </div>
+    {% endif %} #}
+<h2>Compte existant</h2>
+    <form action="{{ path('security_login') }}" method="post">
+    <div class="group_from">
+        <label for="username">Email* </label>
+        <input type="text" id="username" name="_username"  required autofocus>
+</div>
+<div class="group_from">
+        <label for="password">Mot de passe* </label>
+        <input type="password" id="password" name="_password"   required>
+</div>
+       
+ <p class='form_remarque'>*Champs obligatoires</p>
+        <button class="btn" type="submit">Se connecter</button>
+       
+    </form>
+    
+    
+</div>
+</div>
+{% endblock %}

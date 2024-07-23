@@ -1,0 +1,73 @@
+footer {
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    .container_footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:0.5rem;
+        .section_footer {
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .adresse_mail{
+                text-decoration: none;
+                    color: #777;
+                    cursor: pointer;
+                    font-size: .8125rem;
+                    letter-spacing: .0625rem;
+                    font-family: "Reem Kufi", sans-serif;
+
+
+            }
+            .titre-footer {
+                color: #777;
+                cursor: pointer;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 0.9rem;
+                letter-spacing: .0625rem;
+                //text-transform: uppercase;
+                font-family: "Reem Kufi", sans-serif;
+                font-weight: normal;
+            }
+
+            .informations {
+               
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+
+                .texte {
+                    text-decoration: none;
+                    color: #777;
+                    cursor: pointer;
+                    font-size: .8125rem;
+                    letter-spacing: .0625rem;
+                    font-family: "Reem Kufi", sans-serif;
+                }
+            }
+
+            .icons-footer {
+
+                display: flex;
+                gap: 1rem;
+
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .container_footer {
+            grid-template-columns: 1fr;
+        }
+    }
+}

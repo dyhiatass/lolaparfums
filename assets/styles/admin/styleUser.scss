@@ -1,0 +1,75 @@
+/* Styles généraux pour le conteneur */
+.container_table {
+    margin: 40px 5px 0 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Pour permettre le défilement horizontal sur les petits écrans */
+
+    .btn-group {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+
+        .delete-form {
+            margin-right: 10px;
+        }
+
+        .delete-button, .add-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 800px; /* Largeur minimale pour éviter les déformations */
+
+        .my-row, .header-row {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+
+            .cell {
+                font-family: 'Reem Kufi', sans-serif;
+                font-size: 0.9025rem;
+                padding: 5px;
+                text-align: left;
+                flex: 0 1 20%;
+                color: #333333;
+            }
+
+            .checkbox-cell {
+                padding: 0;
+                display: flex;
+                justify-content: left;
+                width: 3vw;
+
+                input[type="checkbox"] {
+                    margin: 0;
+                }
+            }
+        }
+        .my-row:last-child{
+            border-bottom: none;
+        }
+
+        .header-row .cell {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333333;
+        }
+    }
+}

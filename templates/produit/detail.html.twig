@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail du produit{% endblock %}
+
+{% block body %}
+    <div class="product-detail">
+        <h1 class="product-name">{{ produit.nom }}</h1>
+        <img class="product-image" src="{{ asset('uploads/images/' ~ produit.image) }}" alt="{{ produit.nom }}" width="230" height="230">
+        <p class="product-description">{{ produit.description }}</p>
+        {% if produit.isCoffret == false %}
+            <p class="choix-taille">Veuillez sélectionner une contenance :</p>
+            <form class="product-form" action="{{ path('ajouter_au_panier', { 'id': produit.id }) }}" method="post">
+                <div class="product-options">
+                    {% for detail in produit.detailsParfums %}
+                        <div class="product-option">
+                            <input type="radio" id="taille" name="taille" value="{{ detail.taille }}">
+                            <label for="taille">{{ detail.taille }}  -  {{ detail.prix }} €</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="product-button" type="submit">Ajouter au panier</button>
+            </form>
+        {% else %}
+            <p class="product-is-coffret">Ce produit est un coffret :</p>
+            <form class="product-form" action="{{ path('ajouter_au_panier', { 'id': produit.id }) }}" method="post">
+                <div class="product-options">
+                    {% for detail in produit.detailsParfums %}
+                        <div class="product-option">
+                            <input type="hidden" name="taille" value="coffret">
+                            <label for="coffret">{{ produit.nom }} - {{ detail.prix }} €</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="product-button" type="submit">Ajouter au panier</button>
+            </form>
+        {% endif %}
+
+        <a class="product-back-link" href="{{ path('home') }}">Retour aux produits</a>
+    </div>
+{% endblock %}

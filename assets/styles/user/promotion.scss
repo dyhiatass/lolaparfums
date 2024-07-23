@@ -1,0 +1,124 @@
+.section_promotion {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    //border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+    h1 {
+        padding: 1rem;
+        font-family: Reem Kufi, sans-serif;
+        font-size: 1.0625rem;
+        text-transform: uppercase;
+        line-height: 1.875;
+        letter-spacing: .125rem;
+        font-weight: inherit;
+    }
+
+    .products_promotion {
+        width: 100%;
+        //border: 1px solid yellow;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        height: auto;
+        justify-content: center;
+        align-items: stretch;
+
+        .product-card {
+            position: relative;
+            //border: 1px solid red;
+            flex: 1 1 180px;
+                max-width: 220Px;
+            //padding: 5px;
+            display: grid;
+            max-height: auto;
+            grid-template-columns: 5 repeat(100px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+
+            .container-image{
+                    
+                //border: 1px solid green;
+                max-width:150px ;
+                    height: 190px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    z-index: 4;
+        a{
+                img {
+                   
+                    border-radius: 5px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    transition-property: opacity;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                }
+                img:hover{
+                    transform: scale(1.1);
+            
+            }
+
+            
+            
+        } 
+
+         } 
+            .coffrets-marque {
+
+                font-size: 0.9125rem;
+                text-transform: uppercase;
+                font-family: "Reem kufi" sans-serif;
+
+                color: black;
+                text-align: center;
+            }
+
+            .coffrets-nom {
+                margin-top: 0.4rem;
+                font-family: 'aBeeZee' sans-serif;
+                color: #777;
+                font-size: 0.8125rem;
+                text-align: center;
+            }
+
+            .prix-promo {
+                margin-top: 0.6rem;
+                font-family: 'aBeeZee' sans-serif;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .coffrets-prix {
+                    text-decoration: line-through;
+                    font-size: 0.9rem;
+                    text-align: center;
+                    color: black;
+                }
+
+                .coffrets-prix_reduction {
+                    color: rgb(225, 0, 84);
+                    font-size: 1.2rem;
+                    text-align: center;
+                    font-weight: bold;
+
+
+                }
+
+            }
+
+
+        }
+    }
+}

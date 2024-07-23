@@ -1,0 +1,292 @@
+body {
+  background-color: #FFFFFF;
+  font-family: "Reem Kufi", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+body .section {
+  flex: 1;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+body .section .section_titre {
+  margin-bottom: 5px;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+  line-height: 1.875;
+  letter-spacing: 0.125rem;
+  font-weight: inherit;
+}
+@media (max-width: 768px) {
+  body .section .section_titre {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  body .section .section_titre {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 380px) {
+  body .section .section_titre {
+    font-size: 0.8rem;
+  }
+}
+body .section .section_products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+body .section .section_products .section_product-card {
+  position: relative;
+  flex: 1 1 180px;
+  max-width: 220Px;
+  display: grid;
+  max-height: auto;
+  grid-template-columns: 5 repeat(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+body .section .section_products .section_product-card .container-image {
+  max-width: 150px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 3;
+}
+body .section .section_products .section_product-card .container-image a img {
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  transition-property: opacity;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+body .section .section_products .section_product-card .container-image a img:hover {
+  transform: scale(1.1);
+}
+body .section .section_products .section_product-card .coffrets-marque {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  font-family: "Reem kufi" sans-serif;
+  color: black;
+  text-align: center;
+}
+body .section .section_products .section_product-card .coffrets-nom {
+  font-family: "aBeeZee" sans-serif;
+  color: #777;
+  font-size: 13px;
+  text-align: center;
+}
+body .section .section_products .section_product-card .badge-promotion {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  background-color: rgb(225, 0, 84);
+  color: white;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 5px;
+  z-index: 7;
+}
+body .section .section_products .section_product-card .coffrets-prix {
+  color: black;
+  margin-top: 0.2rem;
+  font-family: "aBeeZee" sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .section .section_products .section_product-card .coffrets-prix .prix_texte {
+  font-family: "aBeeZee" sans-serif;
+  color: #777;
+  font-size: 0.8rem;
+}
+body .section .section_products .section_product-card .coffrets-prix .prix {
+  text-align: center;
+  font-family: "aBeeZee" sans-serif;
+  font-size: 1rem;
+  color: black;
+}
+@media (max-width: 768px) {
+  body .section .section_products .section_product-card {
+    gap: 10px;
+    flex: 1 1 160px;
+  }
+}
+@media (max-width: 500px) {
+  body .section .section_products .section_product-card {
+    gap: 5px;
+    flex: 1 1 140px;
+  }
+}
+body .section .section_products .section_product-card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  body .section .section_product-card {
+    gap: 10px;
+  }
+}
+@media (max-width: 500px) {
+  body .section .section_product-card {
+    gap: 5px;
+  }
+}
+body .section_coupdecoeur {
+  flex: 1;
+  padding: 2rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+body .section_coupdecoeur .section_titre {
+  padding: 1rem;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+  line-height: 1.875;
+  letter-spacing: 0.125rem;
+  font-weight: inherit;
+}
+@media (max-width: 768px) {
+  body .section_coupdecoeur .section_titre {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  body .section_coupdecoeur .section_titre {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 380px) {
+  body .section_coupdecoeur .section_titre {
+    font-size: 0.8rem;
+  }
+}
+body .section_coupdecoeur .section_products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+body .section_coupdecoeur .section_product-card {
+  position: relative;
+  flex: 1 1 180px;
+  max-width: 220Px;
+  display: grid;
+  max-height: auto;
+  grid-template-columns: 5 repeat(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body .section_coupdecoeur .section_product-card .container-image {
+  max-width: 150px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 3;
+}
+body .section_coupdecoeur .section_product-card .container-image a img {
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  transition-property: opacity;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+body .section_coupdecoeur .section_product-card .container-image a img:hover {
+  transform: scale(1.1);
+}
+body .section_coupdecoeur .section_product-card .badge-promotion {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  background-color: rgb(225, 0, 84);
+  color: white;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 5px;
+  z-index: 7;
+}
+body .section_coupdecoeur .section_product-card .coffrets-marque {
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  font-family: "Reem kufi" sans-serif;
+  color: black;
+  text-align: center;
+}
+body .section_coupdecoeur .section_product-card .coffrets-nom {
+  font-family: "aBeeZee" sans-serif;
+  color: #777;
+  font-size: 13px;
+  text-align: center;
+}
+body .section_coupdecoeur .section_product-card .coffrets-prix {
+  margin-top: 0.6rem;
+  font-family: "aBeeZee" sans-serif;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .section_coupdecoeur .section_product-card .coffrets-prix .prix_texte {
+  font-family: "aBeeZee" sans-serif;
+  color: #777;
+  font-size: 0.8rem;
+  margin-right: 0.4rem;
+}
+body .section_coupdecoeur .section_product-card .coffrets-prix .prix {
+  text-align: center;
+  font-family: "aBeeZee" sans-serif;
+  font-size: 1rem;
+  color: black;
+}
+body .section_coupdecoeur .section_product-card:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  body .section_coupdecoeur .section_product-card {
+    gap: 10px;
+    flex: 1 1 160px;
+  }
+}
+@media (max-width: 500px) {
+  body .section_coupdecoeur .section_product-card {
+    gap: 5px;
+    flex: 1 1 140px;
+  }
+}/*# sourceMappingURL=home.css.map */

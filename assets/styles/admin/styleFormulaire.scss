@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+
+    .alert {
+        padding: 0.2rem;
+        color: red;
+        font-family: 'Reem Kufi', sans-serif;
+        font-size: 0.8025rem;
+
+    }
+
+
+    .container__form {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+
+        .errors {
+
+            text-decoration: none;
+            list-style: none;
+            width: 80%;
+            margin: 0;
+            padding: 0;
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin: 0;
+                    padding: 0;
+                    color: red;
+                    font-family: 'Reem Kufi', sans-serif;
+                    font-size: 0.8025rem;
+
+                }
+
+            }
+
+        }
+
+        .titre_login_register {
+           
+            text-align: center;
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 1.0625rem;
+            text-transform: uppercase;
+            line-height: 1.875;
+            letter-spacing: .125rem;
+            margin-top: 10vh ;
+        }
+        @media(max-width:900px){
+            .titre_login_register{
+                margin-top: 50Px;
+                font-size: 1rem;
+
+            }
+
+        }
+        @media(max-width:500px){
+            .titre_login_register{
+                margin-top: 50Px;
+                font-size: 0.8rem;
+
+            }
+
+        }
+
+        form {
+            //border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            background-color: #f5f5f5;
+            padding: 20px;
+
+            .informations_connexion {
+                text-align: center;
+                font-family: 'Reem Kufi', sans-serif;
+                font-size: 1.225rem;
+                line-height: 1.875;
+                letter-spacing: .125rem;
+                margin: 3vh 0;
+
+            }
+
+            .form-group {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 20px; // Ajoute un espace entre les champs
+
+                label {
+                    font-family: 'Reem Kufi' sans-serif;
+                    font-size: 0.8rem;
+                    top: 17%;
+                    left: 12%;
+                    position: absolute;
+                }
+
+                label.required:after {
+                    content: " *";
+                    color: red;
+                }
+
+                input {
+                    width: 80%;
+                    height: 7vh;
+                    padding: 1rem;
+                    border: 1px solid #F5F5F5;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
+
+
+                input[type='file'] {
+
+                    width: 80%;
+                    height: 7vh;
+                    padding: 1rem;
+                    background-color: white;
+                }
+
+                .description-label {
+                    font-family: 'Reem Kufi' sans-serif;
+                    font-size: 0.8rem;
+                    top: 17%;
+                    left: 12%;
+                    position: absolute;
+                }
+
+
+                .description-input {
+                    width: 80%;
+                    height: 7vh;
+                    padding: 1rem;
+                    border: 1px solid #F5F5F5;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
+
+
+
+
+            }
+
+            .checkbox {
+                margin-top: 1vh;
+                width: 80%;
+                display: flex;
+                align-items: start;
+                gap: 2vw;
+
+                label {
+                    font-family: 'Reem Kufi' sans-serif;
+                    font-size: 0.9rem;
+                    top: 17%;
+                    left: 12%;
+
+                }
+            }
+
+            .form-select {
+
+                width: 85%;
+
+                .select {
+                    width: 100%;
+                    height: 5vh;
+                }
+
+            }
+
+            button {
+                width: 35%;
+                font-family: 'Reem Kufi' sans-serif;
+                font-size: 1.0625rem;
+                color: white;
+                height: 9vh;
+                background-color: #F9A49D;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2vh;
+                border: 1px solid #F9A49D;
+                border-radius: 5px;
+                cursor: pointer;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: #f69087;
+                }
+            }
+
+            @media(max-width:900px) {
+                button {
+                    font-size: 0.9rem;
+                    width: 40%;
+                    height: 6vh;
+                }
+
+                @media(max-width:500px) {
+                    button {
+                        margin-top: 5px;
+                        font-size: 0.8rem;
+                        width: 45%;
+                        height: 5vh;
+                    }
+
+
+                }
+            }
+        }
+
+        @media(max-width:900px) {
+            form {
+                margin-top: 2px;
+                width: 80%;
+                .informations_connexion{
+                    font-size: 1rem;
+                }
+                
+                
+            }
+        }
+    }
+}

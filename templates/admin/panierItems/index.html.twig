@@ -1,0 +1,49 @@
+{# {% extends 'admin/admin_layout.html.twig' %}
+
+{% block title %}Liste des éléments du panier{% endblock %}
+
+{% block body %} #}
+<div
+	class="container_table">
+	{# <form action="{{ path('admin_panier_items_delete') }}" method="POST"> #}
+	<div class='table'>
+		<div class='my-row'>
+			<div class='cell'><input type='checkbox'></div>
+			<div class='cell'>ID</div>
+			<div class='cell'>Nom</div>
+			<div class='cell'>Taille</div>
+			<div class='cell'>Quantité</div>
+			<div class='cell'>Prix Unitaire</div>
+			<div class='cell'>Prix Total</div>
+			<div class='cell'>Edit</div>
+		</div>
+		{% set totalPrixPanier = 0 %}
+		{% for item in items %}
+			{% set prixUnitaire = item.detailsParfum.prix %}
+			{% if item.detailsParfum.promotion %}
+				{% set prixUnitaire = item.detailsParfum.prix - (item.detailsParfum.prix * item.detailsParfum.pourcentagePromotion / 100) %}
+			{% endif %}
+			{% set prixTotal = prixUnitaire * item.quantite %}
+			{% set totalPrixPanier = totalPrixPanier + prixTotal %}
+			<div class='my-row'>
+				<div class='cell'><input type='checkbox' name='panier_item_ids[]' value="{{ item.id | number_format }}"></div>
+				<div class='cell'>{{ item.id }}</div>
+				<div class='cell'>{{ item.detailsParfum.nom }}</div>
+				{% if not item.detailsParfum.parfums.isCoffret %}
+					<div class='cell'>{{ item.detailsParfum.taille }}</div>
+				{% else %}
+					<div class='cell'>N/A</div>
+				{% endif %}
+				<div class='cell'>{{ item.quantite }}</div>
+				<div class='cell'>{{ prixUnitaire|number_format(2, '.', ',') }}</div>
+				<div class='cell'>{{ prixTotal|number_format(2, '.', ',') }}</div>
+				{# <div class='cell'><a href="{{ path('admin_panier_items_edit', {id: item.id}) }}">Modifier</a></div> #}
+			</div>
+		{% endfor %}
+	</div>
+	{# <button type="submit" name="delete" class="delete-button">Supprimer</button>
+	        </form>
+	    </div>
+	    <h2>Total du panier : {{ totalPrixPanier|number_format(2, '.', ',') }}</h2>
+	    <button class="add-button"><a class='add-button_a' href="{{ path('admin_panier_items_new') }}">Ajouter</a></button>
+	{% endblock %} #}

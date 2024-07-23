@@ -1,0 +1,47 @@
+{% extends 'admin/admin_layout.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+	<div class="container_table">
+		
+			<form action="{{ path('admin_user_delete') }}" method="POST" class="delete-form">
+			<div class="btn-group">
+				<button type="submit" name="delete" class="delete-button">
+					<img src="{{ asset('icons/delete.svg') }}" alt="Delete" width="16" height="16">
+				</button>
+
+				<a class="add-button" href="{{ path('admin_user_new') }}">
+					<img src="{{ asset('icons/add.svg') }}" alt="Add" width="18" height="18">
+				</a>
+			</div>
+			<div class="table">
+				<div class="my-row header-row">
+					<div class="cell checkbox-cell"><input type="checkbox"></div>
+					<div class="cell">ID</div>
+					<div class="cell">Email</div>
+					<div class="cell">Nom</div>
+					<div class="cell">Prenom</div>
+					<div class="cell">Edit</div>
+				</div>
+				{% for user in users %}
+					<div class="my-row">
+						<div class="cell checkbox-cell">
+							<input type="checkbox" name="user_ids[]" value="{{ user.id }}">
+						</div>
+						<div class="cell">{{ user.id }}</div>
+						<div class="cell">{{ user.email }}</div>
+						<div class="cell">{{ user.nom }}</div>
+						<div class="cell">{{ user.prenom }}</div>
+						<div class="cell">
+							<a href="{{ path('admin_user_edit', { id: user.id }) }}">
+								<img src="{{ asset('icons/editUser.svg') }}" alt="Edit" width="18" height="18">
+							</a>
+						</div>
+					</div>
+				{% endfor %}
+			</form>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,96 @@
+.section_promotion {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+.section_promotion h1 {
+  padding: 1rem;
+  font-family: Reem Kufi, sans-serif;
+  font-size: 1.0625rem;
+  text-transform: uppercase;
+  line-height: 1.875;
+  letter-spacing: 0.125rem;
+  font-weight: inherit;
+}
+.section_promotion .products_promotion {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: auto;
+  justify-content: center;
+  align-items: stretch;
+}
+.section_promotion .products_promotion .product-card {
+  position: relative;
+  flex: 1 1 180px;
+  max-width: 220Px;
+  display: grid;
+  max-height: auto;
+  grid-template-columns: 5 repeat(100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.section_promotion .products_promotion .product-card .container-image {
+  max-width: 150px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 4;
+}
+.section_promotion .products_promotion .product-card .container-image a img {
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  transition-property: opacity;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.section_promotion .products_promotion .product-card .container-image a img:hover {
+  transform: scale(1.1);
+}
+.section_promotion .products_promotion .product-card .coffrets-marque {
+  font-size: 0.9125rem;
+  text-transform: uppercase;
+  font-family: "Reem kufi" sans-serif;
+  color: black;
+  text-align: center;
+}
+.section_promotion .products_promotion .product-card .coffrets-nom {
+  margin-top: 0.4rem;
+  font-family: "aBeeZee" sans-serif;
+  color: #777;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+.section_promotion .products_promotion .product-card .prix-promo {
+  margin-top: 0.6rem;
+  font-family: "aBeeZee" sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section_promotion .products_promotion .product-card .prix-promo .coffrets-prix {
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  text-align: center;
+  color: black;
+}
+.section_promotion .products_promotion .product-card .prix-promo .coffrets-prix_reduction {
+  color: rgb(225, 0, 84);
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}/*# sourceMappingURL=promotion.css.map */

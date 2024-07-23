@@ -1,0 +1,52 @@
+{% extends 'admin/admin_layout.html.twig' %}
+
+{% block title %}Liste des détails des parfums
+{% endblock %}
+
+{% block body %}
+
+	<div class="container_table">
+		<form action="{{ path('admin_details_delete') }}" method="POST">
+		<div class="btn-group">
+				<button type="submit" name="delete" class="delete-button"><img src="{{asset('icons/delete.svg')}}" width="16" height="16" ></button>
+				<a class='add-button' href="{{ path('admin_details_new') }}"><img src="{{asset('icons/add.svg')}}" width='18vw' height='18vh' ></a>
+				</div>
+			<div class='table'>
+				<div class='my-row header-row'>
+					<div class='cell checkbox-cell'><input type='checkbox'></div>
+					<div class='cell'>Nom</div>
+					<div class='cell'>Prix</div>
+					<div class='cell'>Quantité</div>
+					<div class='cell'>Taille</div>
+					<div class='cell'>Promotion</div>
+					<div class='cell'>Pourcentage</div>
+					<div class='cell'>Edit</div>
+
+				</div>
+				{% for parfumsDetail in parfumsDetails %}
+					<div class='my-row'>
+						<div class='cell checkbox-cell'><input type='checkbox' name='parfumsDetail_ids[]' value={{ parfumsDetail.id | number_format }}></div>
+						<div class='cell'>{{ parfumsDetail.parfums.nom }}</div>
+						<div class='cell'>{{ parfumsDetail.prix }}</div>
+						<div class='cell'>{{ parfumsDetail.quantite }}</div>
+						<div class='cell'>{{ parfumsDetail.taille }}</div>
+						<div class='cell'>{{ parfumsDetail.promotion ? 'Oui' : 'Non' }}</div>
+						<div class='cell'>{{ parfumsDetail.pourcentagePromotion }}</div>
+
+						<div class='cell'>
+							<a class='cell_a' href="{{ path('admin_details_edit', {id: parfumsDetail.id})}}"><img src="{{asset('icons/editProduct.svg')}}" width='18vw' height='18vh' ></a>
+						</div>
+
+					</div>
+				{% endfor %}
+			</div>
+	
+		</fom>
+	</div>
+
+	
+{% endblock %}
+
+
+
+
