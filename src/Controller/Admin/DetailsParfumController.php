@@ -21,7 +21,7 @@ extends AbstractController
     {
         $DetailsParfumDetails = $DetailsParfumRepository->findAll();
 
-        return $this->render('admin/DetailsParfum/index.html.twig', [
+        return $this->render('admin/detailsParfum/index.html.twig', [
             'parfumsDetails' => $DetailsParfumDetails,
         ]);
     }
