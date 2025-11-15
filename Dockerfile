@@ -25,5 +25,10 @@ RUN php bin/console asset-map:compile --env=prod || true
 # Cache Symfony
 RUN php bin/console cache:clear --env=prod || true
 
-# Lancement serveur PHP intégré
-CMD ["php", "-S", "0.0.0.0:10000", "-t", "public"]
+# Lancement via script
+COPY docker-entrypoint.sh /app/docker-entrypoint.sh
+RUN chmod +x /app/docker-entrypoint.sh
+
+CMD ["/app/docker-entrypoint.sh"]
+
+
